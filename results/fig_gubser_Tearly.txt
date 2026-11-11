@@ -1,3 +1,3 @@
-written: figures/fig_gubser_Tearly.pdf
+written: figures\fig_gubser_Tearly.pdf
 tau=0.5 fm: T(r=0)=0.948 GeV, T(r=40 fm)=0.362 GeV (isothermal), 0.043 GeV (isentropic)
 tau=1.0 fm: T(r=0)=0.733 GeV, T(r=40 fm)=0.287 GeV (isothermal), 0.034 GeV (isentropic)

@@ -4,17 +4,17 @@ kappa=3 a_p=4.5: reaches the light cone: True;  max |V - v_lambdaPF| for xi < 0.
 kappa=5 a_p=4.0: reaches the light cone: True;  max |V - v_lambdaPF| for xi < 0.99: 7.3e-12
 kappa=5 a_p=3.5: reaches the light cone: True;  max |V - v_lambdaPF| for xi < 0.99: 4.6e-12
 kappa=3: the centre branch reaches the light cone for 1.70 <= a_p <= 6.30  (analytic: 1.69 < a_p < 6.31)
-kappa=3 a_p = 3(kappa+1)/kappa = 4.000: max |V - xi| = 4.0e-12
-kappa=5 a_p = 3(kappa+1)/kappa = 3.600: max |V - xi| = 1.3e-14
+kappa=3 a_p = 3(kappa+1)/kappa = 4.000: max |V - xi| = 2.2e-13
+kappa=5 a_p = 3(kappa+1)/kappa = 3.600: max |V - xi| = 1.8e-07
 2. tail branch, integrated inwards from xi = 10^4
 kappa=3 a_p=4.0 (kappa+1 = 4): V -> 1 at xi = 1.000001;  max |V xi - 1| for xi = 1.05-10^3: 2.1e-12
 kappa=3 a_p=4.5 (kappa+1 = 4): V -> 1 at xi = 1.000147
-kappa=3 a_p=3.5 (kappa+1 = 4): crosses the light cone and folds (V' diverges) at xi = 0.99774, V = 0.9916; distance from the sonic line 4.8e-11
-kappa=3 a_p=2.5 (kappa+1 = 4): crosses the light cone and folds (V' diverges) at xi = 0.96132, V = 0.8629; distance from the sonic line 2.4e-09
+kappa=3 a_p=3.5 (kappa+1 = 4): crosses the light cone and folds (V' diverges) at xi = 0.99774, V = 0.9916; distance from the sonic line 3.2e-11
+kappa=3 a_p=2.5 (kappa+1 = 4): crosses the light cone and folds (V' diverges) at xi = 0.96132, V = 0.8629; distance from the sonic line 1.0e-09
 kappa=5 a_p=6.0 (kappa+1 = 6): V -> 1 at xi = 1.000001;  max |V xi - 1| for xi = 1.05-10^3: 1.6e-12
 kappa=5 a_p=6.5 (kappa+1 = 6): V -> 1 at xi = 1.000006
-kappa=5 a_p=5.5 (kappa+1 = 6): crosses the light cone and folds (V' diverges) at xi = 0.99964, V = 0.9991; distance from the sonic line 1.8e-12
-kappa=5 a_p=4.5 (kappa+1 = 6): crosses the light cone and folds (V' diverges) at xi = 0.98813, V = 0.9692; distance from the sonic line 3.0e-10
+kappa=5 a_p=5.5 (kappa+1 = 6): crosses the light cone and folds (V' diverges) at xi = 0.99964, V = 0.9991; distance from the sonic line 2.0e-12
+kappa=5 a_p=4.5 (kappa+1 = 6): crosses the light cone and folds (V' diverges) at xi = 0.98813, V = 0.9692; distance from the sonic line 2.8e-10
 3. Rindler atmosphere (symbolic)
 u.u = 1 ;  -a.a rho^2 = 1  (proper acceleration 1/rho)
-at t = 0: T/T_0 = 1 ;  n ∝ p/T = r**(-kappa - 1)  -> r^-(3+alpha) with alpha = kappa - 2
+at t = 0: T/T_0 = 1 ;  n ~ p/T = r**(-kappa - 1)  -> r^-(3+alpha) with alpha = kappa - 2

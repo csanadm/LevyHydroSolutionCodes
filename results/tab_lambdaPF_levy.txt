@@ -9,12 +9,45 @@ kappa=5 lambda=+0.65 c=0.58 beta=0.55:  r<=300 fm: alpha 1.05 / 1.18, R 12.99 / 
 kappa=5 lambda=+0.65 c=0.58 beta=0.85:  r<=300 fm: alpha 1.67 / 1.68, R 3.84 / 6.72   |   full source: alpha 1.67 / 1.68, R 3.84 / 6.72   |   share of S~(0) from r>100 / r>1000 fm: 0.0% / 0.0%, 0.1% / 0.0%
 kappa=3 lambda=-0.55 c=1.55 beta=0.55:  r<=300 fm: alpha 1.10 / 0.90, R 7.64 / 9.08   |   full source: alpha 1.05 / 0.75, R 7.84 / 10.34   |   share of S~(0) from r>100 / r>1000 fm: 4.1% / 0.2%, 10.9% / 1.4%
 
-Step 1: isothermal and isentropic dressings, kappa = 5 (full source); alpha and R [fm] at m_T = 0.2 / 0.8 GeV
-iso  lambda=0.30:  alpha 1.87 / 1.81,  R 9.72 / 8.59
-iso  lambda=0.40:  alpha 1.87 / 1.87,  R 15.76 / 15.76
-iso  lambda=0.50:  alpha 1.90 / 1.91,  R 22.57 / 22.90
-iso  lambda=0.65:  alpha 1.94 / 1.94,  R 33.57 / 33.17
-isen lambda=0.30:  alpha 1.91 / 1.89,  R 9.20 / 7.60
-isen lambda=0.40:  alpha 1.87 / 1.87,  R 15.76 / 15.76
-isen lambda=0.50:  alpha 1.85 / 1.85,  R 26.84 / 31.62
-isen lambda=0.65:  alpha 1.80 / 1.80,  R 74.04 / 119.84
+Step 1: isothermal and isentropic dressings, kappa = 5; alpha and R [fm] at m_T = 0.2 / 0.8 GeV,
+for the source restricted to r <= 300, 3000, 10000, 30000 fm (the paper quotes the last one)
+iso  lambda=0.30 r<=    300 fm:  alpha 1.87 / 1.83,  R 9.72 / 8.50
+iso  lambda=0.30 r<=   3000 fm:  alpha 1.87 / 1.81,  R 9.72 / 8.59
+iso  lambda=0.30 r<=  10000 fm:  alpha 1.87 / 1.81,  R 9.72 / 8.59
+iso  lambda=0.30 r<=  30000 fm:  alpha 1.87 / 1.81,  R 9.72 / 8.59
+iso  lambda=0.30  half of S~(0) from r > 16.78 / 45.59 fm
+iso  lambda=0.40 r<=    300 fm:  alpha 1.87 / 1.92,  R 15.76 / 14.53
+iso  lambda=0.40 r<=   3000 fm:  alpha 1.87 / 1.87,  R 15.76 / 15.76
+iso  lambda=0.40 r<=  10000 fm:  alpha 1.87 / 1.87,  R 15.76 / 15.76
+iso  lambda=0.40 r<=  30000 fm:  alpha 1.87 / 1.87,  R 15.76 / 15.76
+iso  lambda=0.40  half of S~(0) from r > 30.82 / 122.94 fm
+iso  lambda=0.50 r<=    300 fm:  alpha 1.91 / 1.97,  R 22.57 / 19.20
+iso  lambda=0.50 r<=   3000 fm:  alpha 1.90 / 1.91,  R 22.57 / 22.90
+iso  lambda=0.50 r<=  10000 fm:  alpha 1.90 / 1.91,  R 22.57 / 22.90
+iso  lambda=0.50 r<=  30000 fm:  alpha 1.90 / 1.91,  R 22.57 / 22.90
+iso  lambda=0.50  half of S~(0) from r > 50.05 / 224.12 fm
+iso  lambda=0.65 r<=    300 fm:  alpha 1.95 / 2.00,  R 33.46 / 24.18
+iso  lambda=0.65 r<=   3000 fm:  alpha 1.94 / 1.94,  R 33.57 / 33.17
+iso  lambda=0.65 r<=  10000 fm:  alpha 1.94 / 1.94,  R 33.57 / 33.17
+iso  lambda=0.65 r<=  30000 fm:  alpha 1.94 / 1.94,  R 33.57 / 33.17
+iso  lambda=0.65  half of S~(0) from r > 87.89 / 407.03 fm
+isen lambda=0.30 r<=    300 fm:  alpha 1.91 / 1.89,  R 9.20 / 7.58
+isen lambda=0.30 r<=   3000 fm:  alpha 1.91 / 1.89,  R 9.20 / 7.60
+isen lambda=0.30 r<=  10000 fm:  alpha 1.91 / 1.89,  R 9.20 / 7.60
+isen lambda=0.30 r<=  30000 fm:  alpha 1.91 / 1.89,  R 9.20 / 7.60
+isen lambda=0.30  half of S~(0) from r > 16.59 / 46.45 fm
+isen lambda=0.40 r<=    300 fm:  alpha 1.87 / 1.92,  R 15.76 / 14.53
+isen lambda=0.40 r<=   3000 fm:  alpha 1.87 / 1.87,  R 15.76 / 15.76
+isen lambda=0.40 r<=  10000 fm:  alpha 1.87 / 1.87,  R 15.76 / 15.76
+isen lambda=0.40 r<=  30000 fm:  alpha 1.87 / 1.87,  R 15.76 / 15.76
+isen lambda=0.40  half of S~(0) from r > 30.82 / 122.94 fm
+isen lambda=0.50 r<=    300 fm:  alpha 1.85 / 1.96,  R 26.77 / 22.54
+isen lambda=0.50 r<=   3000 fm:  alpha 1.85 / 1.85,  R 26.84 / 31.62
+isen lambda=0.50 r<=  10000 fm:  alpha 1.85 / 1.85,  R 26.84 / 31.62
+isen lambda=0.50 r<=  30000 fm:  alpha 1.85 / 1.85,  R 26.84 / 31.62
+isen lambda=0.50  half of S~(0) from r > 57.45 / 296.45 fm
+isen lambda=0.65 r<=    300 fm:  alpha 1.93 / 2.00,  R 59.30 / 37.19
+isen lambda=0.65 r<=   3000 fm:  alpha 1.80 / 1.88,  R 74.04 / 105.78
+isen lambda=0.65 r<=  10000 fm:  alpha 1.80 / 1.80,  R 74.04 / 119.77
+isen lambda=0.65 r<=  30000 fm:  alpha 1.80 / 1.80,  R 74.04 / 119.84
+isen lambda=0.65  half of S~(0) from r > 190.20 / 1451.90 fm
