@@ -1,0 +1,4 @@
+numpy
+scipy
+matplotlib
+sympy  # only for the symbolic part of checks.py
