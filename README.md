@@ -68,12 +68,12 @@ python fig_paper_solII_levy.py
 velocity relative to the similarity lines, and w = p<sup>1/(κ+1)</sup> on τ = const. Crosses mark where the
 branch reaches the sonic line.
 
-![lambda-PF profiles](docs/img/fig_solI_profiles.png)
+<img width="700" alt="lambpda-PF profiles" src="https://github.com/user-attachments/assets/60a655c2-26fd-4dc2-8dd7-d507b59c41c5" />
 
 **Dressed Gubser flow.** Lévy exponent α (top) and R<sup>−2</sup> (bottom) versus m<sub>T</sub> for pions,
 from side-direction fits of the transverse source.
 
-<img src="docs/img/fig_solII_levy.png" alt="Levy fits of the dressed Gubser flow" width="420">
+<img width="420" alt="Levy fits of the dressed Gubser flow" src="https://github.com/user-attachments/assets/9b5bb9c0-ff84-4b48-8cb2-b38a1c0b16ad" />
 
 The images above illustrate the output of the code; the paper is the reference for all results.
 
