@@ -1,5 +1,5 @@
 """Run every script of the repository in order and store the printed output of each in results/<script>.txt.
-Total run time: about 20 minutes on a single core.  Usage: python run_all.py
+Total run time: about 30 minutes on a single core.  Usage: python run_all.py
 """
 import os
 import subprocess
@@ -23,6 +23,8 @@ SCRIPTS = [
     'gubser_fit_systematics.py', # dressed Gubser flow: Levy-fit systematics
     'tab_lambdaPF_tails.py',     # lambda-PF: asymptotic source tails
     'tab_lambdaPF_levy.py',      # lambda-PF: Levy fits
+    'tab_lambdaPF_cuts.py',      # lambda-PF: particle number, cut dependence of the Levy fits
+    'gubser_tail.py',            # dressed Gubser flow: origin of the Levy shape, out and long directions
 ]
 
 if __name__ == '__main__':
