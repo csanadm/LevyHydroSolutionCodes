@@ -2,7 +2,8 @@
   figures/fig_solI_profiles.pdf  (Fig. fig:solI)      regular branch for kappa = 3 and 5, panels (a)-(h)
   figures/fig_solI_window.pdf    (Fig. fig:solIwindow) fate of the regular branch in the (kappa, lambda) plane
   figures/fig_solI_accel.pdf     (Fig. fig:solIaccel)  proper acceleration on tau = const
-The window scan is the one of figs_solI_reproduction.py (kappa = 3..9 in 49 steps, d lambda = 0.0125, ~2 min);
+The window scan is the one of figs_solI_reproduction.py (kappa = 3..9 in 49 steps, d lambda = 0.005, ~4 min);
+for kappa > 3+2sqrt2 the lower window edge is lambda_c (review item 4);
 the other two figures use the same lambda values as the earlier versions of the paper figures.
 Usage: python fig_paper_solI.py [profiles] [window] [accel]
 """
@@ -91,7 +92,7 @@ if 'window' in which:
         return len(sol.t_events[0]) == 0
 
     ks = np.linspace(3, 9, 49)
-    lams = np.linspace(-1, 1, 161)
+    lams = np.linspace(-1, 1, 401)
     Z = np.full((len(lams), len(ks)), np.nan)
     for j, kk in enumerate(ks):
         for i, ll in enumerate(lams):
@@ -107,7 +108,11 @@ if 'window' in which:
     kk = np.linspace(3, 9, 300)
     cs = 1 / np.sqrt(kk)
     ax.plot(kk, (kk - 3 + 2 * cs) / (kk - 1), 'k-', lw=1.0, label='$s_c=1$ (window edges)')
-    ax.plot(kk, (kk - 3 - 2 * cs) / (kk - 1), 'k-', lw=1.0)
+    # lower edge: lambda_- for kappa <= 3+2sqrt2, lambda_c (upper boundary of the complex-delta region) above
+    lamm = (kk - 3 - 2 * cs) / (kk - 1)
+    lH_ = 1 - 3 / kk
+    lamc = 0.5 * (lH_ + np.sqrt(np.clip(lH_**2 - 4 / kk**2, 0, None)))
+    ax.plot(kk, np.where(kk <= 3 + 2 * np.sqrt(2), lamm, lamc), 'k-', lw=1.0)
     ax.plot(kk, 1 - 3 / kk, 'k--', lw=1.0, label='Hubble, $\\lambda_{\\rm H}=1-3/\\kappa$')
     lamH = 1 - 3 / kk
     disc = lamH**2 - 4 / kk**2

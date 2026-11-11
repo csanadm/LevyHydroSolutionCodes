@@ -1,5 +1,5 @@
 """Fig. fig:levy of the accelerating-hydro draft (v4; the q^-1 = 10 fm curves were added in v4): Levy fits of the dressed Gubser flow.
-(a) alpha(m_T): values of Table tab:levy; (b) R^-2(m_T): points from figs/glevy.npy
+(a) alpha(m_T): computed values (= Table tab:levy, v8); (b) R^-2(m_T): points from figs/glevy.npy
 (run `python figs_talk.py glevy` first), lines = linear fits of Table tab:levy.
 Output: figures/fig_solII_levy.pdf (+ .png preview).
 """
@@ -15,11 +15,13 @@ plt.rcParams.update({'font.family': 'serif', 'font.serif': ['cmr10'], 'mathtext.
 mTs = np.array([0.2, 0.3, 0.4, 0.5, 0.6, 0.8])
 HERE = os.path.dirname(os.path.abspath(__file__))
 res = np.load(os.path.join(HERE, 'figs', 'glevy.npy'))          # [tau_f=6,8,10] x mT x (alpha, R)
-hom = np.array([1.70, 1.83, 1.88, 1.91, 1.93, 1.96])      # draft Table (isentropic dressing, tau_f = 8 fm)
+hom = np.load(os.path.join(HERE, 'figs', 'gisen.npy'))[:, 0]   # isentropic, tau_f = 8 fm, with 1/n_eq(T) (make_levy_data.py)
 cols = plt.cm.viridis([0.15, 0.45, 0.75])
 fig, axs = plt.subplots(2, 1, figsize=(3.4, 4.3), sharex=True, gridspec_kw=dict(hspace=0.06))
-TAB_A = {6: [1.71, 1.66, 1.66, 1.68, 1.70, 1.74], 8: [1.69, 1.67, 1.68, 1.71, 1.73, 1.78], 10: [1.68, 1.66, 1.69, 1.73, 1.75, 1.79]}
-TAB_FIT = {6: (0.170, 0.069), 8: (0.148, 0.025), 10: (0.127, 0.002)}
+TAB_A = {tf: np.round(r[:, 0], 2) for tf, r in zip((6, 8, 10), res)}       # = Table tab:levy
+TAB_FIT = {}
+for tf, r in zip((6, 8, 10), res):
+    a_, b_ = np.polyfit(mTs, r[:, 1]**-2, 1); TAB_FIT[tf] = (a_, b_ / a_)
 for c, tf, r in zip(cols, (6, 8, 10), res):
     axs[0].plot(mTs, TAB_A[tf], 'o-', color=c, ms=3.5, label=f'isothermal, $\\tau_f={tf}$ fm')
     y = r[:, 1]**-2

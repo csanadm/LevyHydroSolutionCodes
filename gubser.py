@@ -1,6 +1,6 @@
 """Isothermally dressed Gubser flow on tau = tau_f: profiles, transverse source, Levy fits."""
 import numpy as np
-from scipy.special import k1e, kv
+from scipy.special import k1e, kv, kve
 
 HBARC = 0.1973269804  # GeV fm
 M_PI = 0.13957
@@ -39,15 +39,20 @@ def source_xy(x, y, mT, q, tauf, Tf, m=M_PI, dressing='iso'):
     if dressing == 'iso':
         n = p
         T = Tf * np.ones_like(r)
-    else:  # isentropic dressing: nu = const, T = p^(1/4)/nu, normalised so that T = Tf at the pressure maximum
+    elif dressing in ('isen', 'hom'):  # isentropic dressing: nu = const, T = p^(1/4)/nu, T = Tf at the pressure maximum
         rstar = np.sqrt(max(tauf**2 - q**-2, 0))
         T = Tf * (p / pressure(tauf, rstar, q))**0.25
         n = p / T
+    else:
+        raise ValueError(dressing)
     cphi = np.where(r > 0, x / np.where(r > 0, r, 1), 1.0)
     arg = mT * np.cosh(chi) / T
     # K1(arg) = k1e(arg) e^{-arg}; combine exponents for stability
     expo = -arg + KT * np.sinh(chi) * cphi / T
-    return n * k1e(arg) * np.exp(expo)
+    if dressing == 'iso':          # n_eq(T_f) is a constant and drops out
+        return n * k1e(arg) * np.exp(expo)
+    # general dressing: fugacity n/n_eq(T), n_eq ∝ T K2(m/T) = T kve(2, m/T) e^{-m/T}  (review item 3, v8)
+    return n / (T * kve(2, m / T)) * k1e(arg) * np.exp(expo + m / T)
 
 
 def levy_fit_side(mT, q=1 / 4.3, tauf=8.0, Tf=0.140, dressing='iso', L=160.0, dx=0.08, m=M_PI):
@@ -63,3 +68,14 @@ def levy_fit_side(mT, q=1 / 4.3, tauf=8.0, Tf=0.140, dressing='iso', L=160.0, dx
     alpha = A[0]
     R = HBARC * np.exp(A[1] / alpha)
     return alpha, R, Qs, yv
+
+
+if __name__ == '__main__':
+    q = 1 / 4.3
+    print('r*', np.sqrt(64 - q**-2), 'vmax', q * 8 / np.sqrt(1 + (q * 8)**2))
+    for r in [50, 100, 300, 1000]:
+        print('r a ->', r, r * accel(8.0, r, q), 'slope p', np.log(pressure(8, r * 1.01, q) / pressure(8, r, q)) / np.log(1.01))
+    for dr in ('iso', 'isen'):
+        for mT in [0.2, 0.3, 0.4, 0.5, 0.6, 0.8]:
+            a, R, _, _ = levy_fit_side(mT, dressing=dr)
+            print(f'{dr} tau_f=8 mT={mT}: alpha={a:.3f} R={R:.3f} fm R^-2={R**-2:.4f}')
