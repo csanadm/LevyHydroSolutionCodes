@@ -107,7 +107,3 @@ print(levy_fit(Qs, y[300.0]))                   # alpha, R for the source restri
 
 If you use these codes, please cite the paper above. The version of the code used for the paper is tagged
 as `v1.0`.
-
-## License
-
-[to be added]
