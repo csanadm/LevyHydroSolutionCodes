@@ -1,0 +1,5 @@
+isothermal, tau_f=6 fm: alpha [1.708 1.671 1.671 1.687 1.71  1.753]  R^-2 = 0.169 (m_T +0.066 GeV)
+isothermal, tau_f=8 fm: alpha [1.699 1.669 1.683 1.71  1.736 1.781]  R^-2 = 0.148 (m_T +0.021 GeV)
+isothermal, tau_f=10 fm: alpha [1.685 1.667 1.693 1.725 1.754 1.799]  R^-2 = 0.127 (m_T -0.003 GeV)
+isentropic, tau_f=8 fm: alpha [1.726 1.838 1.891 1.919 1.938 1.958]  R^-2 = 0.209 (m_T -0.128 GeV)
+isothermal, q^-1=10 fm, tau_f=8 fm: alpha [1.704 1.679 1.665 1.662 1.67  1.697] R [8.47 7.87 7.28 6.75 6.31 5.62]  R^-2 = 0.030 (m_T +0.247 GeV)

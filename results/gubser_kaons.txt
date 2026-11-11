@@ -1,0 +1,10 @@
+benchmark q^-1 = 4.3 fm
+  m_T = 0.6 GeV:  pi alpha = 1.736, R = 3.29 fm  |  K alpha = 1.398, R = 3.84 fm  |  alpha_K - alpha_pi = -0.339, R_K/R_pi - 1 = +16.4%
+  m_T = 0.8 GeV:  pi alpha = 1.781, R = 2.87 fm  |  K alpha = 1.609, R = 3.14 fm  |  alpha_K - alpha_pi = -0.172, R_K/R_pi - 1 = +9.4%
+  m_T = 1.0 GeV:  pi alpha = 1.814, R = 2.57 fm  |  K alpha = 1.714, R = 2.73 fm  |  alpha_K - alpha_pi = -0.100, R_K/R_pi - 1 = +6.2%
+  m_T = 1.2 GeV:  pi alpha = 1.840, R = 2.35 fm  |  K alpha = 1.775, R = 2.45 fm  |  alpha_K - alpha_pi = -0.064, R_K/R_pi - 1 = +4.4%
+  m_T = 1.5 GeV:  pi alpha = 1.869, R = 2.10 fm  |  K alpha = 1.831, R = 2.16 fm  |  alpha_K - alpha_pi = -0.038, R_K/R_pi - 1 = +2.9%
+q^-1 = 10 fm
+  m_T = 0.6 GeV:  pi alpha = 1.670, R = 6.31 fm  |  K alpha = 1.586, R = 7.21 fm  |  alpha_K - alpha_pi = -0.084, R_K/R_pi - 1 = +14.3%
+  m_T = 0.8 GeV:  pi alpha = 1.697, R = 5.62 fm  |  K alpha = 1.632, R = 6.05 fm  |  alpha_K - alpha_pi = -0.066, R_K/R_pi - 1 = +7.6%
+  m_T = 1.0 GeV:  pi alpha = 1.728, R = 5.12 fm  |  K alpha = 1.682, R = 5.36 fm  |  alpha_K - alpha_pi = -0.047, R_K/R_pi - 1 = +4.8%

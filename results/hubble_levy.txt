@@ -1,0 +1,14 @@
+1. source, side direction, beta = 0.85 (asymptotic slope -8 beta = -6.80)
+   m_T = 0.2 GeV, r = 10 fm: d ln S / d ln r = -5.04   (d ln nu^4 / d ln r = -5.44)
+   m_T = 0.2 GeV, r = 20 fm: d ln S / d ln r = -6.15   (d ln nu^4 / d ln r = -6.40)
+   m_T = 0.2 GeV, r = 100-300 fm: -6.74
+   m_T = 0.8 GeV, r = 10 fm: d ln S / d ln r = -3.73   (d ln nu^4 / d ln r = -5.44)
+   m_T = 0.8 GeV, r = 20 fm: d ln S / d ln r = -5.38   (d ln nu^4 / d ln r = -6.40)
+   m_T = 0.8 GeV, r = 100-300 fm: -6.58
+2. spectrum: local slope d ln(E dN/d^3K) / d ln m_T
+   beta = 0.55: m_T = 10/30/100/300 GeV: -1.564 / -1.569 / -1.571 / -1.571   (-6 beta/(1+2 beta) = -1.571)
+   beta = 0.70: m_T = 10/30/100/300 GeV: -1.736 / -1.744 / -1.748 / -1.749   (-6 beta/(1+2 beta) = -1.750)
+   beta = 0.85: m_T = 10/30/100/300 GeV: -1.868 / -1.879 / -1.885 / -1.887   (-6 beta/(1+2 beta) = -1.889)
+   beta = 0.85: local inverse slope at m_T = 0.7 GeV: 0.54 GeV
+   beta = 0.85: local inverse slope at m_T = 3.0 GeV: 1.64 GeV
+   beta = 0.85: T_eff (m_T - m = 0.1-1.0 GeV) = 0.57 GeV

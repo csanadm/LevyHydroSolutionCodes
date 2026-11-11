@@ -1,0 +1,16 @@
+Table tab:gubserscan (tau_f = 8 fm, T_f = 140 MeV)
+ q^-1   v_max  <v_perp>  T_eff(pi)  T_eff(K)  T_eff(p)   | peak (m_T-m) K, p [GeV]
+  4.3    0.88     0.79      0.46     --        --      | 0.222, 0.595
+  6.0    0.80     0.70      0.35      0.53     --      | 0.048, 0.279
+  8.0    0.71     0.60      0.28      0.37      0.55   | 0.000, 0.095
+ 10.0    0.62     0.52      0.25      0.29      0.38   | 0.000, 0.000
+ 12.0    0.55     0.46      0.22      0.26      0.31   | 0.000, 0.000
+
+benchmark q^-1 = 4.3 fm: pion T_eff = 0.459 GeV; blue-shifted limit T_f sqrt((1+v_max)/(1-v_max)) = 0.556 GeV
+
+q scan, pion Levy fits (side): alpha at m_T = 0.2/0.5/0.8 GeV and slope a of R^-2 = a (m_T + b)
+q^-1 =  4.3 fm: alpha = 1.699 / 1.710 / 1.781,  a = 0.148 fm^-2 GeV^-1
+q^-1 =  6.0 fm: alpha = 1.709 / 1.685 / 1.748,  a = 0.088 fm^-2 GeV^-1
+q^-1 =  8.0 fm: alpha = 1.708 / 1.669 / 1.718,  a = 0.050 fm^-2 GeV^-1
+q^-1 = 10.0 fm: alpha = 1.704 / 1.662 / 1.697,  a = 0.030 fm^-2 GeV^-1
+q^-1 = 12.0 fm: alpha = 1.700 / 1.661 / 1.684,  a = 0.018 fm^-2 GeV^-1

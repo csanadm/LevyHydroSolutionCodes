@@ -1,0 +1,33 @@
+--- 1. lambda-PF: light-cone exponent and outer acceleration
+kappa=5 lambda=+0.30: delta numerical -0.10000, Eq. lightcone -0.10000;  tau a (outer) +0.3536, Eq. accelinf +0.3536
+kappa=5 lambda=+0.35: delta numerical -0.05000, Eq. lightcone -0.05000;  tau a (outer) +0.1443, Eq. accelinf +0.1443
+kappa=5 lambda=+0.50: delta numerical +0.10000, Eq. lightcone +0.10000;  tau a (outer) -0.2041, Eq. accelinf -0.2041
+kappa=5 lambda=+0.65: delta numerical +0.25000, Eq. lightcone +0.25000;  tau a (outer) -0.4167, Eq. accelinf -0.4167
+kappa=3 lambda=-0.50: delta numerical +0.26759, Eq. lightcone +0.26759;  tau a (outer) +0.6336, Eq. accelinf +0.6336
+kappa=3 lambda=+0.30: delta numerical +0.11512, Eq. lightcone +0.11512;  tau a (outer) -0.4155, Eq. accelinf -0.4155
+kappa=3 lambda=+0.50: delta numerical +0.26759, Eq. lightcone +0.26759;  tau a (outer) -0.6336, Eq. accelinf -0.6336
+--- 2. critical point
+kappa=3 lambda=0.7: branch becomes sonic at s = 0.6800; Eq. sc: s_c = 100/147 = 0.6803
+--- 3. central coefficients F_1, F_2
+kappa=5 lambda=+0.3: F_1 fit -0.175000, formula -0.175000;  F_2 fit -0.075590, formula -0.075590
+kappa=3 lambda=-0.5: F_1 fit 0.375000, formula 0.375000;  F_2 fit 0.267188, formula 0.267188
+--- 4. second-order (lambdaPF.solve) vs first-order (Eq. ueq, lambdaPF_source.flow) integration
+kappa=5 lambda=+0.30: max |Delta ln w| = 4.3e-08, max |Delta v| = 1.0e-09
+kappa=5 lambda=+0.65: max |Delta ln w| = 6.1e-08, max |Delta v| = 1.4e-08
+kappa=3 lambda=-0.55: max |Delta ln w| = 2.8e-08, max |Delta v| = 5.7e-09
+--- 5. kappa = 3: approach to Hubble flow
+first order in lambda: max |v - r/t| = 0.4173 lambda at eta = 0.713
+lambda=0.1: max|v - r/t|/lambda = 0.435, max|G - 1|/lambda^2 = 6.09
+lambda=0.03: max|v - r/t|/lambda = 0.423, max|G - 1|/lambda^2 = 6.01
+lambda=0.01: max|v - r/t|/lambda = 0.419, max|G - 1|/lambda^2 = 6.00
+lambda=0.003: max|v - r/t|/lambda = 0.418, max|G - 1|/lambda^2 = 6.00
+--- 6. lambda = 0 (symbolic)
+H^2 = 4*s*(s - 1)*Derivative(F(s), s)**2 ;  Eq. FODE minus its reduced form = 0
+Eq. Flam0 solves it: max |residual| = 2.842170943040401e-14
+kappa=3, r > t: field-equation residual [0.0, 0.0] ; u^t/u^r = r/t ; w / [rho^-1 (rho/r)^(2/kappa)] = 2
+kappa=5, r > t: field-equation residual [0.0, 0.0] ; u^t/u^r = r/t ; w / [rho^-1 (rho/r)^(2/kappa)] = 2
+--- 7. dressed Gubser flow, q^-1 = 4.3 fm, tau_f = 8 fm: 1/r acceleration
+r=   20 fm: r a kinematic 2.2154, r a from Euler 2.2154 (-> 2);  d ln p / d ln r -5.7969 (-> -16/3)
+r=  100 fm: r a kinematic 2.0091, r a from Euler 2.0091 (-> 2);  d ln p / d ln r -5.3572 (-> -16/3)
+r=  300 fm: r a kinematic 2.0010, r a from Euler 2.0010 (-> 2);  d ln p / d ln r -5.3360 (-> -16/3)
+r= 1000 fm: r a kinematic 2.0001, r a from Euler 2.0001 (-> 2);  d ln p / d ln r -5.3336 (-> -16/3)

@@ -1,0 +1,15 @@
+Table tab:gauss (asymptotic K_1); lengths in fm
+m_T [GeV]   r_s   v_perp(r_s)  R_side  R_out  R_long  R_side^-2 [fm^-2]
+  0.2       6.32   0.826      5.16   3.29   5.03   0.038
+  0.3       6.91   0.849      3.96   2.77   3.97   0.064
+  0.4       7.16   0.857      3.40   2.54   3.40   0.087
+  0.5       7.33   0.861      3.04   2.40   3.02   0.108
+  0.6       7.45   0.864      2.79   2.29   2.74   0.129
+  0.8       7.63   0.868      2.44   2.14   2.36   0.169
+
+exact K_1 at m_T = 0.2 GeV: r_s = 5.23 fm, v_perp = 0.762, R_side = 4.77 fm, R_out = 4.21 fm, R_long = 5.39 fm
+
+emission-time contribution to R_out^2 [fm^2], and R_out including it [fm]
+  m_T = 0.2 GeV:  6.47  (Var t = 9.90 fm^2, Cov(x, t) = -0.969 fm^2);  R_out = sqrt(3.29^2 + 6.47) = 4.16 fm
+  m_T = 0.5 GeV:  1.37  (Var t = 1.11 fm^2, Cov(x, t) = -0.181 fm^2);  R_out = sqrt(2.40^2 + 1.37) = 2.67 fm
+  m_T = 0.8 GeV:  0.45  (Var t = 0.36 fm^2, Cov(x, t) = -0.051 fm^2);  R_out = sqrt(2.14^2 + 0.45) = 2.24 fm
