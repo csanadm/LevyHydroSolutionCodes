@@ -102,8 +102,3 @@ src = Source(lam=0.3, k=5, beta=0.55)           # fast-tail dressing, R0 = 5 fm,
 y = side_corr(src, mT=0.2, Qs=Qs, cuts=[300.0])
 print(levy_fit(Qs, y[300.0]))                   # alpha, R for the source restricted to r <= 300 fm
 ```
-
-## Citation
-
-If you use these codes, please cite the paper above. The version of the code used for the paper is tagged
-as `v1.0`.
