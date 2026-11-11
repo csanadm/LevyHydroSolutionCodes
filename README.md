@@ -46,9 +46,11 @@ pip install -r requirements.txt
 | `tab_gubser_radii.py` | Table of the Gaussian homogeneity lengths; exact-K<sub>1</sub> values and emission-time contribution to R<sub>out</sub><sup>2</sup> | seconds |
 | `gubser_kaons.py` | Kaon vs. pion Lévy fits at equal m<sub>T</sub> (benchmark and q<sup>−1</sup> = 10 fm) | ~0.5 min |
 | `gubser_fit_systematics.py` | Lévy-fit systematics: fit window, free intercept | ~0.5 min |
+| `gubser_tail.py` | Origin of the Lévy-like shape: α for the source restricted to r ≤ r<sub>cut</sub> and the share of the emission beyond r<sub>cut</sub>; Lévy fits in the side, out and long directions (Fourier transforms reduced to one radial integral); density, v<sub>⊥</sub> and pressure exponent of the outer region | ~10 min |
 | `tab_lambdaPF_tails.py` | Numerical tail slopes of the λ-PF sources with the fast-tail dressing (values in parentheses in the table of the Lévy-stable range; the Hubble-type slopes) | seconds |
 | `tab_lambdaPF_levy.py` | Table of the Lévy fits of λ-PF with the fast-tail dressing (r ≤ 300 fm and full source, share of S̃(0) from large r; κ = 3 case); fits with the isothermal and isentropic dressings | ~8 min |
-| `run_all.py` | Runs everything and stores the printed output of each script in `results/` | ~20 min |
+| `tab_lambdaPF_cuts.py` | Particle number of the fast-tail dressing (a finite number implies α<sub>∞</sub> > 2; Hubble flow: finite only for β > 1); table of the dependence of the λ-PF Lévy fits on the cut r ≤ r<sub>cut</sub>, and a fit with a free intercept | ~1 min |
+| `run_all.py` | Runs everything and stores the printed output of each script in `results/` | ~30 min |
 
 \*single core
 
@@ -67,6 +69,7 @@ or individual scripts, e.g.
 python fig_lambdaPF.py                      # or select figures: profiles window accel
 python gubser_levy_data.py && python fig_gubser_levy.py
 python tab_lambdaPF_levy.py table           # or: step1
+python gubser_tail.py                       # Gubser source: cuts in r, out and long directions
 ```
 
 ## Examples
