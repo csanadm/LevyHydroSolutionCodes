@@ -26,7 +26,7 @@ def vperp(tau, r, q):
 
 
 def pressure(tau, r, q):
-    """Pressure up to a constant factor, p ∝ tau^(-4/3) D^(-4/3)."""
+    """Pressure up to a constant factor, p ~ tau^(-4/3) D^(-4/3)."""
     return tau**(-4 / 3) * D(tau, r, q)**(-4 / 3)
 
 
@@ -54,7 +54,7 @@ def T_iso(tau, r, q=Q, tauf=TAUF, Tf=TF):
 
 
 def T_isen(tau, r, q=Q, tauf=TAUF, Tf=TF):
-    """Temperature of the isentropic dressing (nu = const), T ∝ p^(1/4),
+    """Temperature of the isentropic dressing (nu = const), T ~ p^(1/4),
     normalised to T = T_f at the pressure maximum on tau_f, r* = sqrt(tau_f^2 - q^-2)."""
     rstar = np.sqrt(max(tauf**2 - q**-2, 0))
     return Tf * (pressure(tau, r, q) / pressure(tauf, rstar, q))**0.25
@@ -64,7 +64,7 @@ def source_xy(x, y, mT, q, tauf, Tf, m=M_PI, dressing='iso'):
     """Transverse source on tau = tau_f at pair rapidity y = 0, integrated over eta_s,
     with K_T along +x (out direction); x, y in fm. Unnormalised.
     dressing = 'iso': isothermal, T = T_f; the constant n_eq(T_f) drops out.
-    dressing = 'isen': isentropic, with the full fugacity n / n_eq(T), n_eq ∝ T K_2(m/T)."""
+    dressing = 'isen': isentropic, with the full fugacity n / n_eq(T), n_eq ~ T K_2(m/T)."""
     KT = np.sqrt(mT**2 - m**2)
     r = np.hypot(x, y)
     chi = np.arctanh(vperp(tauf, r, q))
@@ -82,7 +82,7 @@ def source_xy(x, y, mT, q, tauf, Tf, m=M_PI, dressing='iso'):
     expo = -arg + KT * np.sinh(chi) * cphi / T
     if dressing == 'iso':
         return n * k1e(arg) * np.exp(expo)
-    # n_eq(T) ∝ T K_2(m/T) = T kve(2, m/T) e^(-m/T)
+    # n_eq(T) ~ T K_2(m/T) = T kve(2, m/T) e^(-m/T)
     return n / (T * kve(2, m / T)) * k1e(arg) * np.exp(expo + m / T)
 
 
@@ -110,7 +110,7 @@ def levy_fit_side(mT, q=Q, tauf=TAUF, Tf=TF, dressing='iso', L=160.0, dx=0.08, m
 # ------------------------------------------------------------------ single-particle spectra (isothermal dressing)
 def spectrum(mT, m, q=Q, tauf=TAUF, Tf=TF, rmax=400.0):
     """E dN/d^3K at y = 0 for the isothermal dressing, up to a constant factor:
-    m_T int r dr n(tau_f, r) K_1(m_T cosh(chi)/T_f) I_0(K_T sinh(chi)/T_f), with n ∝ p on tau_f."""
+    m_T int r dr n(tau_f, r) K_1(m_T cosh(chi)/T_f) I_0(K_T sinh(chi)/T_f), with n ~ p on tau_f."""
     KT = np.sqrt(max(mT**2 - m**2, 0.0))
 
     def f(r):
@@ -137,7 +137,7 @@ def spectrum_peak(m, q=Q, tauf=TAUF, Tf=TF):
 
 
 def mean_vperp(q=Q, tauf=TAUF, rmax=80.0):
-    """Density-weighted mean transverse velocity on tau_f (isothermal dressing, n ∝ p)."""
+    """Density-weighted mean transverse velocity on tau_f (isothermal dressing, n ~ p)."""
     rr = np.linspace(0, rmax, 8001)
     w = rr * pressure(tauf, rr, q)
     return np.sum(w * vperp(tauf, rr, q)) / np.sum(w)
@@ -146,7 +146,7 @@ def mean_vperp(q=Q, tauf=TAUF, rmax=80.0):
 # ------------------------------------------------------------------ Gaussian (saddle-point) homogeneity lengths
 def gauss_radii(mT, q=Q, tauf=TAUF, Tf=TF, m=M_PI, exact_K1=False):
     """Saddle-point radii of the isothermal transverse source on the K_T axis (Eq. radii of the paper).
-    With exact_K1=False only the exponential of K_1 is kept, K_1(A) ∝ e^(-A); with exact_K1=True the full
+    With exact_K1=False only the exponential of K_1 is kept, K_1(A) ~ e^(-A); with exact_K1=True the full
     ln K_1 enters the saddle condition and the curvature. Returns r_s, v_perp(r_s), R_side, R_out, R_long (fm)."""
     KT = np.sqrt(mT**2 - m**2)
 

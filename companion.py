@@ -1,15 +1,15 @@
 """Companion solutions with 1/r acceleration (Appendix "Companion solutions" of the paper).
 
-Self-similar flows with power-law initial data at rest, p_0 ∝ r^(-a_p): with xi = r/t and v = V(xi),
+Self-similar flows with power-law initial data at rest, p_0 ~ r^(-a_p): with xi = r/t and v = V(xi),
     V' = [2(kappa+1)(1 - V xi) V/(kappa xi) - a_p (1 - V^2)] / [gamma^2 (kappa+1) ((V - xi)^2 - (1 - V xi)^2/kappa)].
-1. Regular centre branch V ≃ c xi, c = kappa a_p/[3(kappa+1)]: it coincides with the regular branch of lambda-PF with
+1. Regular centre branch V ~= c xi, c = kappa a_p/[3(kappa+1)]: it coincides with the regular branch of lambda-PF with
    lambda = 1 - a_p/(kappa+1) (comparison with lambdaPF.solve); for kappa = 3 it reaches the light cone
    subsonically for 1.69 < a_p < 6.31 (scan); a_p = 3(kappa+1)/kappa gives exactly V = xi.
-2. Tail branch, V ≃ a_p/[(kappa+1) xi] for xi >> 1, integrated inwards: V = 1/xi exactly for a_p = kappa + 1;
+2. Tail branch, V ~= a_p/[(kappa+1) xi] for xi >> 1, integrated inwards: V = 1/xi exactly for a_p = kappa + 1;
    for a_p > kappa + 1 it reaches V -> 1 as xi -> 1+, for a_p < kappa + 1 it crosses the light cone and becomes
    sonic just inside it.
 3. Exact spherical Rindler atmosphere, u = (r, t)/rho, rho = sqrt(r^2 - t^2) (symbolic, needs sympy): proper
-   acceleration 1/rho; with nu ∝ 1/rho the temperature is uniform at t = 0 and n ∝ r^-(kappa+1), i.e. alpha = kappa - 2.
+   acceleration 1/rho; with nu ~ 1/rho the temperature is uniform at t = 0 and n ~ r^-(kappa+1), i.e. alpha = kappa - 2.
 Run time: a few seconds.  Usage: python companion.py
 """
 import numpy as np
@@ -108,5 +108,5 @@ if __name__ == '__main__':
               ' (proper acceleration 1/rho)')
         T = (rho / r)**(2 / kap)                         # T = T_0 (rho/r)^(2/kappa)
         p = (1 / rho)**(kap + 1) * (rho / r)**(2 * (kap + 1) / kap)
-        print('at t = 0: T/T_0 =', sp.simplify(T.subs(t, 0)), ';  n ∝ p/T =', sp.simplify((p / T).subs(t, 0)),
+        print('at t = 0: T/T_0 =', sp.simplify(T.subs(t, 0)), ';  n ~ p/T =', sp.simplify((p / T).subs(t, 0)),
               ' -> r^-(3+alpha) with alpha = kappa - 2')

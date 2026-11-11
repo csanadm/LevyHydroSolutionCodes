@@ -1,8 +1,8 @@
 """Hubble-type Levy solution (Sec. "Hubble-type solutions" of the paper): source tail and high-m_T spectrum.
 
 Spherical case v_x = v_y = v_z: Hubble flow u = x/tau, freeze-out at tau = tau_0, nu = (1 + r^2/R^2)^(-beta),
-n ∝ nu, T = T_0/nu; tau_0 = 8 fm, R = 5 fm, T_0 = 140 MeV, pions at y = 0 with K_T along x. Source per unit volume:
-    S(r, mu; K) ∝ (E - k.r/t) n/n_eq(T) exp(-K.u/T),   n_eq(T) ∝ T K_2(m/T),
+n ~ nu, T = T_0/nu; tau_0 = 8 fm, R = 5 fm, T_0 = 140 MeV, pions at y = 0 with K_T along x. Source per unit volume:
+    S(r, mu; K) ~ (E - k.r/t) n/n_eq(T) exp(-K.u/T),   n_eq(T) ~ T K_2(m/T),
 with mu the cosine of the angle between r and K_T, E = m_T, r/t = tanh(eta), K.u = m_T cosh(eta) - K_T mu sinh(eta),
 eta = arcsinh(r/tau_0). (This is lambda-PF with lambda = lambda_H and the fast-tail dressing, cf. lambdaPF_source.py.)
 Prints

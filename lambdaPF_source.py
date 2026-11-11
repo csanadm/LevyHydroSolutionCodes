@@ -7,11 +7,11 @@ with w/w(0) = (G/G_0) sqrt(1 - u^2) and flow rapidity eta + zeta. This is indepe
 solver in lambdaPF.py and serves as a cross-check of it.
 
 Source. Cooper-Frye on tau = tau_f per unit volume, pions at y = 0, K_T along the out direction:
-    S(r, mu; K) ∝ (E - k.r/t) n/n_eq(T) exp(-K.u/T),   n_eq(T) ∝ T K_2(m/T)   (full K_2, no T >> m approximation),
+    S(r, mu; K) ~ (E - k.r/t) n/n_eq(T) exp(-K.u/T),   n_eq(T) ~ T K_2(m/T)   (full K_2, no T >> m approximation),
 mu = cosine of the angle between r and K_T. Dressings:
     'fast'  nu = (1 + r^2/R0^2)^(-beta) on tau_f:  n = w^kappa nu,  T = T_f (w/w0)/nu   (Hubble-type, fast tail)
-    'iso'   T = T_f,  n ∝ w^(kappa+1)
-    'isen'  T = T_f w/w0,  n ∝ w^kappa
+    'iso'   T = T_f,  n ~ w^(kappa+1)
+    'isen'  T = T_f w/w0,  n ~ w^kappa
 Parameters as in the paper: tau_f = 8 fm, R0 = 5 fm, T_f = 140 MeV.
 
 Correlation function. S~(Q) for Q along the side direction from a Legendre expansion of S in mu (l <= L, even l
@@ -78,7 +78,7 @@ class Source:
         e, w, Y, T, n = self.thermo(r)
         flux = mT - KT * mu * np.tanh(e)                    # E - k.r/t with E = m_T at y = 0, r/t = tanh(eta)
         Ku = mT * np.cosh(Y) - KT * mu * np.sinh(Y)
-        # n/n_eq(T) exp(-K.u/T) with n_eq ∝ T K_2(m/T) = T kve(2, m/T) e^(-m/T)
+        # n/n_eq(T) exp(-K.u/T) with n_eq ~ T K_2(m/T) = T kve(2, m/T) e^(-m/T)
         return flux * n / (T * kve(2, m / T)) * np.exp(-(Ku - m) / T)
 
     def KuT_side(self, r, mT):

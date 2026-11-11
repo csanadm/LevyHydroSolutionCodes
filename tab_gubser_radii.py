@@ -1,7 +1,7 @@
 """Dressed Gubser flow, isothermal dressing: Gaussian (saddle-point) homogeneity lengths.
 
 Reproduces Table "tab:gauss" of the paper (q^-1 = 4.3 fm, tau_f = 8 fm, T_f = 140 MeV, pions), computed with the
-exponential approximation K_1(A) ∝ e^(-A), and the numbers quoted in its caption: the exact-K_1 values at
+exponential approximation K_1(A) ~ e^(-A), and the numbers quoted in its caption: the exact-K_1 values at
 m_T = 0.2 GeV, and the contribution of the emission time to R_out^2, beta_T^2 Var(t) - 2 beta_T Cov(x_out, t),
 with t = tau_f cosh(eta_s) on the freeze-out hypersurface (computed for the full isothermal source).
 Usage: python tab_gubser_radii.py

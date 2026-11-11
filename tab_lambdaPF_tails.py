@@ -1,8 +1,8 @@
 """lambda-PF with the fast-tail dressing: numerical check of the asymptotic source tail.
 
-Prediction (Eq. alphainfI of the paper):  S ∝ r^-[8 beta - (kappa-3) delta]  for 2 beta + delta >= 1,
+Prediction (Eq. alphainfI of the paper):  S ~ r^-[8 beta - (kappa-3) delta]  for 2 beta + delta >= 1,
 with delta from Eq. (lightcone). At finite r (Eq. localslope):
-    d ln S / d ln r ≃ -[8 beta - (kappa-3) delta] + omega K.u/T,   omega = 2 beta + delta - 1.
+    d ln S / d ln r ~= -[8 beta - (kappa-3) delta] + omega K.u/T,   omega = 2 beta + delta - 1.
 Prints, for pions with m_T = 0.2 and 0.8 GeV, the local slopes in the side direction over r = 10^2-3x10^2,
 10^3-3x10^3 and 10^4-3x10^4 fm, the finite-r prediction at the window centres, and the angle-averaged slope
 at 10^2-3x10^2 fm. The kappa = 5 rows give the numbers in parentheses in Table "tab:solIstable"

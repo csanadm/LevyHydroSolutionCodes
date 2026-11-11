@@ -9,7 +9,7 @@ lambda-PF (Sec. "Self-similar lambda potential flows" and Appendix "Second-order
   6. lambda = 0 (symbolic, needs sympy): reduction of Eq. FODE, the solution Eq. Flam0, and its identity with the
      spherical Rindler atmosphere outside the light cone (Eq. rindler).
 Dressed Gubser flow (Sec. "Gubser flow with comoving dressing"):
-  7. p ∝ r^(-16/3) and r a -> 2 on tau = const, from the kinematics (u.d u) and from Euler's equation.
+  7. p ~ r^(-16/3) and r a -> 2 on tau = const, from the kinematics (u.d u) and from Euler's equation.
 Usage: python checks.py   (part 6 is skipped if sympy is not installed)
 """
 import numpy as np

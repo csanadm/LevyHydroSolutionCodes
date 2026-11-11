@@ -30,8 +30,10 @@ if __name__ == '__main__':
     for script in SCRIPTS:
         t0 = time.time()
         print(f'>>> {script}', flush=True)
-        out = subprocess.run([sys.executable, script], cwd=HERE, capture_output=True, text=True)
-        with open(os.path.join(HERE, 'results', script.replace('.py', '.txt')), 'w') as f:
+        env = dict(os.environ, PYTHONIOENCODING='utf-8')      # e.g. sympy output on Windows consoles
+        out = subprocess.run([sys.executable, script], cwd=HERE, capture_output=True, text=True,
+                             encoding='utf-8', env=env)
+        with open(os.path.join(HERE, 'results', script.replace('.py', '.txt')), 'w', encoding='utf-8') as f:
             f.write(out.stdout)
         if out.returncode != 0:
             sys.exit(f'{script} failed:\n{out.stderr}')
